@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-dark bg-surface font-sans;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.25s ease-in-out;
+}
+
+.leaflet-container {
+  @apply rounded-2xl z-0;
+}
+
+/* Landing: glass surfaces */
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-glass;
+  }
+  .glass-panel-light {
+    @apply bg-white/75 backdrop-blur-xl border border-white/70 shadow-card;
+  }
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-cyan-500 to-ocean-light;
+  }
+}
+
+.Toastify__toast--success {
+  @apply bg-success text-white;
+}
+.Toastify__toast--error {
+  @apply bg-error text-white;
+}
+.Toastify__toast--info {
+  @apply bg-primary text-white;
+}
